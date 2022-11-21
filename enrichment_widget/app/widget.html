@@ -3,9 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <script src="https://live.zwidgets.com/js-sdk/1.1/ZohoEmbededAppSDK.min.js"></script>
-    <script src="./js/app.js"></script>
+    <script>
+ZOHO.embeddedApp.on("PageLoad", function(data) {
+    // This is the information about the current record, if applicable.
+
+var id = data.EntityId, module = data.Entity;
+
+ZOHO.CRM.API.getRecord({Entity: module, RecordID:id})
+.then(function(data){
+    console.log(data);
+});
+
+
+});
+
+ZOHO.embeddedApp.init();
+
+    </script>
   </head>
   <body>
     <h2>This is a sample Widget built using Zoho Extension toolkit.</h2>
+    <p>test</p>
   </body>
 </html>
