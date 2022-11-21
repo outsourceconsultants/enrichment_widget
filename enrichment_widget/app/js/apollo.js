@@ -15,6 +15,7 @@ var domain = "apollo.io";
     "domain": "apollo.io"
 }
 */
+
 myBody = {
     "api_key":"CimAYp3p4OegDg3MRj-MRA",
     "organization_name":company,
@@ -28,11 +29,10 @@ myBody = {
     fetch("https://api.apollo.io/v1/people/match", 
         {
             method: "POST", 
-            body: JSON.stringify(myBody),
+            body: myBody,
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json, text/plain, */*',
                 'Cache-Control':'no-cache'
             }
         }
