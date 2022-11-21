@@ -25,22 +25,21 @@ myBody = {
 
 };
 
-
-
-    
-  
-
-    
-    fetch("https://api.apollo.io/v1/people/match",
-    {
-        method: "POST",
-        body: myBody,
-        headers: {
-            'Cache-Control' :'no-cache',
-            'Content-Type' : 'application/json',
-          }
-          
+    fetch("https://api.apollo.io/v1/people/match", 
+        {
+            method: "POST", 
+            body: JSON.stringify(data),
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+    ).then(response => response.json())
+    .then(data => {
+        console.log(data);
     })
-    .then(function(res){ return res.json(); })
-    .then(function(data){ alert( JSON.stringify( data ) ) })
+    .catch((err) => {
+         console.log(err);
+        })
+
 
