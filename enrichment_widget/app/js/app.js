@@ -1,29 +1,14 @@
-ZOHO.embeddedApp.on("PageLoad", entity => {
+ZOHO.embeddedApp.on("PageLoad", function(data) {
     // This is the information about the current record, if applicable.
-    console.log(entity);
 
+var id = data.EntityId, module = data.Entity;
 
+ZOHO.CRM.API.getRecord({Entity: module, RecordID:id})
+.then(function(data){
+    console.log(data);
+});
 
 
 });
 
 ZOHO.embeddedApp.init();
-
-const tBody = document.querySelector('tbody');
-
-function updateTable() {
-    const tableData = food
-        .map((item) => {
-            return `
-    <tr>
-    <td>${item.name}</td>
-    <td>$${item.price}</td>
-    <td>${item.popularity}</td>
-    <td><i class="fas fa-times-circle"></i></td>
-    </tr>
-    `;
-        })
-        .join('');
-
-  tBody.innerHTML = tableData;
-}
