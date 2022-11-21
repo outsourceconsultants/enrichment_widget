@@ -23,23 +23,24 @@ myBody = {
     "first_name":firstName,
     "domain": domain
 
-}
+};
 
-(async() => {
-const rawResponse = fetch('https://api.apollo.io/v1/people/match',{
-    method: 'POST',
-    body: myBody, // string or object
-    headers: {
-      'Cache-Control' :'no-cache',
-      'Content-Type' : 'application/json',
-    }
+
+
     
-});
-    const content = await rawResponse.json();
+  
 
-    console.log(content);
-})();
-
-
-
+    
+    fetch("https://api.apollo.io/v1/people/match",
+    {
+        method: "POST",
+        body: myBody,
+        headers: {
+            'Cache-Control' :'no-cache',
+            'Content-Type' : 'application/json',
+          }
+          
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){ alert( JSON.stringify( data ) ) })
 
