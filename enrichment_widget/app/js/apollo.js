@@ -1,6 +1,7 @@
 var myHeaders = new Headers();
 myHeaders.append("Cache-Control", "no-cache");
 myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Access-Control-Allow-Origin","*");
 
 var raw = JSON.stringify({
   "api_key": "CimAYp3p4OegDg3MRj-MRA",
