@@ -28,7 +28,7 @@ myBody = {
     fetch("https://api.apollo.io/v1/people/match", 
         {
             method: "POST", 
-            body: JSON.stringify(data),
+            body: JSON.stringify(myBody),
             mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
