@@ -56,7 +56,7 @@ https.createServer(options, expressApp).listen(port, function () {
     console.log(chalk.bold.red(port + " port is already in use"));
   }
 });
-
+/*
 async function getEnrichedData() {
 
   const data = {
@@ -102,3 +102,4 @@ async function getEnrichedData() {
   xhttp.send(JSON.stringify());
 }
 getEnrichedData();
+*/
