@@ -2,8 +2,8 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
     ZOHO.CRM.UI.Resize({height:"1200",width:"1200"}).then(function(data){
         console.log(data);
     });
-    var moduleName = entity.Entity;
-    var recordId = entity.EntityId;
+    var moduleName = data.Entity;
+    var recordId = data.EntityId;
 
     var func_name = "getApolloData";
     var req_data ={
@@ -13,7 +13,7 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
     };
     ZOHO.CRM.FUNCTIONS.execute(func_name, req_data)
     .then(function(data){
-        console.log(data)
+        console.log(data);
     })
     
 
