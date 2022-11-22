@@ -5,19 +5,9 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
     var moduleName = entity.Entity;
     var recordId = entity.EntityId; 
     var api_url = "https://api.apollo.io/v1/people/match";
-    ZOHO.CRM.API.getRecord({Entity: moduleName, RecordID: recordId})
-    .then(function (recordData) {
-    var record = recordData.data
-
-
-
-
-    console.log(record);
-
-    // This is the information about the current record, if applicable.
 
     try{
-        var data ={
+        var data = {
         api_key: "CimAYp3p4OegDg3MRj-MRA",
         first_name: "Tim",
         last_name: "Zheng",
@@ -43,6 +33,21 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
     }catch(err){
         console.log("here is the error" + err);
     }
+
+
+
+    ZOHO.CRM.API.getRecord({Entity: moduleName, RecordID: recordId})
+    .then(function (recordData) {
+    var record = recordData.data
+
+
+
+
+    console.log(record);
+
+    // This is the information about the current record, if applicable.
+
+  
 
 });
 
