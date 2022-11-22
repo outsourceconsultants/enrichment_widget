@@ -16,7 +16,7 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const api_url ="https://api.apollo.io/v1/people/match";
 process.env.PWD = process.env.PWD || process.cwd();
 
-const enrichedProspects =[];
+const enrichedProspects = new Array();
 
 var expressApp = express();
 var port = 5000;
@@ -77,26 +77,28 @@ async function getEnrichedData() {
     if (this.readyState == 4 && this.status == 200) {
       
       const rawApolloData = JSON.parse(xhttp.responseText);
-      
+      console.log(rawApolloData);
       rawApolloData.person.forEach(element => {
         enrichedProspects.push({"id": element.id,"name": element.name});
         console.log(element.id);
       });
-      /*
-      var final = JSON.stringify(enrichedProspects);
-     
-      fs.writeFile('./app/person.json', final, err => {
-        if (err) {
-          console.error(err);
-        }
-      });
-           */
-      console.log(rawApolloData);
-    }
-  }
-  
-  xhttp.send(JSON.stringify(data));
-  
+      console.log(enrichedProspects);
 
-};
+
+      
+
+           
+      
+    }
+    var final = JSON.stringify(enrichedProspects);
+     
+    fs.writeFile('./app/person.json', final, err => {
+      if (err) {
+        console.error(err);
+      }
+    });
+    
+  }
+  xhttp.send(JSON.stringify());
+}
 getEnrichedData();
