@@ -33,13 +33,23 @@ ZOHO.CRM.API.getRecord({Entity: module, RecordID:id})
             "headers": {"Content-Type": "application/json","Cache-Control": "no-cache"}
            }
        }
-   ZOHO.CRM.CONNECTOR.invokeAPI(api_url,data)
-   .then(function(data){
-       console.log(data);
+       var data ={
+        name:"name",
+        age:"23"
+        };
+        var request ={
+             url : api_url,
 
-
-   })
-
+             headers:{
+                "Content-Type": "application/json",
+                "Cache-Control": "no-cache"
+             },
+             body:data
+        }
+        ZOHO.CRM.HTTP.post(request)
+        .then(function(data){
+            console.log(data)
+        })
 
 
 
