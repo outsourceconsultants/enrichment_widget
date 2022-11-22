@@ -3,6 +3,8 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
         console.log(data);
     });
     console.log(data);
+    console.log(data.EntityId[0]);
+    console.log(data.EntityId);
     /*
     var moduleName = data.Entity;
     var recordId = data.EntityId;
