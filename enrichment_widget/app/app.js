@@ -7,7 +7,7 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
     var api_url = "https://api.apollo.io/v1/people/match";
     ZOHO.CRM.API.getRecord({Entity: moduleName, RecordID: recordId})
     .then(function (recordData) {
-        record= recordData.data
+    var record = recordData.data
 
 
 
