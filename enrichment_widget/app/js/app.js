@@ -20,22 +20,14 @@ ZOHO.CRM.API.getRecord({Entity: module, RecordID:id})
     console.log(data);
 
     // This is the information about the current record, if applicable.
-    var data =	{
-        "VARIABLES":{
-            "api_key": "CimAYp3p4OegDg3MRj-MRA",
-            "first_name": "Tim",
-            "last_name": "Zheng",
-            "organization_name": "Apollo",
-            "email": "name@domain.io",
-            "domain": "apollo.io"
-           },
-           "PARTS":{
-            "headers": {"Content-Type": "application/json","Cache-Control": "no-cache"}
-           }
-       }
+
        var data ={
-        name:"name",
-        age:"23"
+        api_key: "CimAYp3p4OegDg3MRj-MRA",
+        first_name: "Tim",
+        last_name: "Zheng",
+        organization_name: "Apollo",
+        email: "name@domain.io",
+        domain: "apollo.io"
         };
         var request ={
              url : api_url,
