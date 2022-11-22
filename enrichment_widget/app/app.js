@@ -11,9 +11,7 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
     var func_name = "getapollodata";
     
     var req_data ={
-        "auth-type": "apikey",
-        "zapikey": "https://www.zohoapis.com/crm/v2/functions/getapollodata/actions/execute?auth_type=apikey&zapikey=1003.1240b276bfd39be89f8c5b866cf1d794.f59f8eb0d6ec3e4fcaba754c20f2465e",
-        "id" : recordId,
+        "id" : recordId
         
 
     };
