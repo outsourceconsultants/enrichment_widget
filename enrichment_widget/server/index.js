@@ -16,7 +16,7 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const api_url ="https://api.apollo.io/v1/people/match";
 process.env.PWD = process.env.PWD || process.cwd();
 
-const enricheProspects ={};
+const enrichedProspects =[];
 
 var expressApp = express();
 var port = 5000;
@@ -36,8 +36,10 @@ expressApp.get('/plugin-manifest.json', function (req, res) {
 expressApp.use('/app', express.static('app'));
 expressApp.use('/app', serveIndex('app'));
 expressApp.use(express.static(path.join(__dirname, 'public')))
-expressApp.get('/',function(req,res,next){
-next();
+
+expressApp.get('/',function(req,res){
+
+redirect('/app');
 });
 
 
