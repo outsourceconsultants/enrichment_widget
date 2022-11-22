@@ -1,21 +1,18 @@
 ZOHO.embeddedApp.on("PageLoad", function(data) {
-
-
     ZOHO.CRM.UI.Resize({height:"1200",width:"1200"}).then(function(data){
         console.log(data);
     });
     var moduleName = entity.Entity;
     var recordId = entity.EntityId; 
-    
     var api_url = "https://api.apollo.io/v1/people/match";
     ZOHO.CRM.API.getRecord({Entity: moduleName, RecordID: recordId})
     .then(function (recordData) {
-        recordData = recordData.data[0];
+        record= recordData.data[0];
 
 
 
 
-    console.log(recordData);
+    console.log(record);
 
     // This is the information about the current record, if applicable.
 
