@@ -3,11 +3,11 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
         console.log(data);
     });
     console.log(data);
-    console.log(data.EntityId[0]);
-    console.log(data.EntityId);
-    /*
-    var moduleName = data.Entity;
-    var recordId = data.EntityId;
+     var recordId = data.EntityId[0];
+  
+    
+    var moduleName = data.Entity[0];
+
     console.log(recordId);
     var func_name = "getApolloData";
     var req_data ={
@@ -20,7 +20,7 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
         console.log(data);
     });
     
-*/
+
 
 
 
