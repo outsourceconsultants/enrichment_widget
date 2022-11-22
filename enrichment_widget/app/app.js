@@ -2,6 +2,8 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
     ZOHO.CRM.UI.Resize({height:"1200",width:"1200"}).then(function(data){
         console.log(data);
     });
+    console.log(data);
+    /*
     var moduleName = data.Entity;
     var recordId = data.EntityId;
     console.log(recordId);
@@ -16,7 +18,7 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
         console.log(data);
     });
     
-
+*/
 
 
 
