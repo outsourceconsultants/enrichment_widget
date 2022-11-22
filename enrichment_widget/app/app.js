@@ -38,12 +38,12 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
 
     ZOHO.CRM.API.getRecord({Entity: moduleName, RecordID: recordId})
     .then(function (recordData) {
-    var record = recordData.data
+   
 
 
 
 
-    console.log(record);
+    console.log(recordData);
 
     // This is the information about the current record, if applicable.
 
