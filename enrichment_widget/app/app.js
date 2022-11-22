@@ -3,7 +3,32 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
         console.log(data);
     });
     var moduleName = entity.Entity;
-    var recordId = entity.EntityId; 
+    var recordId = entity.EntityId;
+
+    var func_name = "getApolloData";
+    var req_data ={
+      "arguments": JSON.stringify({
+        "id" : recordId
+      })
+    };
+    ZOHO.CRM.FUNCTIONS.execute(func_name, req_data)
+    .then(function(data){
+        console.log(data)
+    })
+    
+
+
+
+
+
+
+
+
+
+
+/*
+
+
     var api_url = "https://api.apollo.io/v1/people/match";
 
     try{
@@ -52,6 +77,9 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
 });
 
 
+
+
+*/
 });
 
 
