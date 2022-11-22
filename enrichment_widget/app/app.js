@@ -4,7 +4,7 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
     });
     var moduleName = data.Entity;
     var recordId = data.EntityId;
-
+    console.log(recordId);
     var func_name = "getApolloData";
     var req_data ={
       "arguments": JSON.stringify({
