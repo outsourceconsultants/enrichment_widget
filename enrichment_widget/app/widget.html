@@ -2,29 +2,99 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <script src="https://live.zwidgets.com/js-sdk/1.1/ZohoEmbededAppSDK.min.js"></script>
-    <script>
-ZOHO.embeddedApp.on("PageLoad", function(data) {
-    // This is the information about the current record, if applicable.
+    <link rel="stylesheet" href="index.css"/>
 
-var id = data.EntityId, module = data.Entity;
+    <script src="https://live.zwidgets.com/js-sdk/1.0.5/ZohoEmbededAppSDK.min.js"></script>
 
-ZOHO.CRM.API.getRecord({Entity: module, RecordID:id})
-.then(function(data){
-    console.log(data);
-});
-
-
-});
-
-ZOHO.embeddedApp.init();
-
-    </script>
-  <script src="./js/app.js" type="text/javascript"></script> 
-   
   </head>
   <body>
-    <h2>This is a sample Widget built using Zoho Extension toolkit.</h2>
-    <p>test</p>
+    <header>
+      <div class="top-header">
+        <nav>
+ 
+        </nav>
+      </div>
+      <div class="container">
+          <img src="https://www.outsource-consultants.com/wp-content/themes/bedstone/images/logo-on-light.svg"/>
+      </div>
+    </header>
+    <section class="hero">
+      <h2>Apollo Enrichment</h2>
+    </section>
+    <main class="site-main">
+        <div class="container">
+
+           
+
+
+
+            <div class="table-wrapper">
+              <table class="fl-table">
+                  <thead>
+                  <tr>
+                      <th>Zoho</th>
+                      <th>Apollo</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td>Content 1</td>
+                      <td>Content 1</td>
+
+                  </tr>
+                  <tr>
+                      <td>Content 2</td>
+                      <td>Content 2</td>
+
+                  </tr>
+                  <tr>
+                      <td>Content 3</td>
+                      <td>Content 3</td>
+
+                  </tr>
+                  <tr>
+                      <td>Content 4</td>
+                      <td>Content 4</td>
+
+                  </tr>
+                  <tr>
+                      <td>Content 5</td>
+                      <td>Content 5</td>
+
+                  </tr>
+                  <tr>
+                      <td>Content 6</td>
+                      <td>Content 6</td>
+
+                  </tr>
+                  <tr>
+                      <td>Content 7</td>
+                      <td>Content 7</td>
+
+                  </tr>
+                  <tr>
+                      <td>Content 8</td>
+                      <td>Content 8</td>
+
+                  </tr>
+                  <tr>
+                      <td>Content 9</td>
+                      <td>Content 9</td>
+
+                  </tr>
+                  <tr>
+                      <td>Content 10</td>
+                      <td>Content 10</td>
+
+                  </tr>
+                  <tbody>
+              </table>
+          </div>
+        </div>
+    </main>
+    
+    <footer>
+      <a href="mailto:ptoepel@outsource-consultants.com">Issues with widget</a>
+    </footer>
   </body>
 </html>

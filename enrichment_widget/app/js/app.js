@@ -12,12 +12,12 @@ var id = data.EntityId, module = data.Entity;
 
 ZOHO.CRM.API.getRecord({Entity: module, RecordID:id})
 .then(function(data){
+    recordData = recordData.data[0];
 
 
 
 
-
-    console.log(data);
+    console.log(recordData);
 
     // This is the information about the current record, if applicable.
 
