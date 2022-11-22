@@ -1,20 +1,16 @@
 ZOHO.embeddedApp.on("PageLoad", function(data) {
+
+
     ZOHO.CRM.UI.Resize({height:"1200",width:"1200"}).then(function(data){
         console.log(data);
     });
-    var api_url = "https://api.apollo.io/v1/people/match";
-
-
-
+    var moduleName = entity.Entity;
+    var recordId = entity.EntityId; 
     
-
-
-
-var id = data.EntityId, module = data.Entity;
-
-ZOHO.CRM.API.getRecord({Entity: module, RecordID:id})
-.then(function(data){
-    recordData = recordData.data[0];
+    var api_url = "https://api.apollo.io/v1/people/match";
+    ZOHO.CRM.API.getRecord({Entity: moduleName, RecordID: recordId})
+    .then(function (recordData) {
+        recordData = recordData.data[0];
 
 
 
