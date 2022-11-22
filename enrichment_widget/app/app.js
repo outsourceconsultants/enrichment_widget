@@ -16,8 +16,8 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
 
     // This is the information about the current record, if applicable.
 
-        try{
-    var data ={
+    try{
+        var data ={
         api_key: "CimAYp3p4OegDg3MRj-MRA",
         first_name: "Tim",
         last_name: "Zheng",
@@ -41,7 +41,7 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
         });
 
     }catch(err){
-        message:"here is the error" + err;
+        console.log("here is the error" + err);
     }
 
 });
