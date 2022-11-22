@@ -1,5 +1,7 @@
 ZOHO.embeddedApp.on("PageLoad", function(data) {
-
+    ZOHO.CRM.UI.Resize({height:"1200",width:"1200"}).then(function(data){
+        console.log(data);
+    });
     var api_url = "https://api.apollo.io/v1/people/match";
 
 
