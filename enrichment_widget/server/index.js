@@ -11,24 +11,23 @@ var morgan = require('morgan');
 var serveIndex = require('serve-index');
 var https = require('https');
 var chalk = require('chalk');
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
+const api_url ="https://api.apollo.io/v1/people/match";
 process.env.PWD = process.env.PWD || process.cwd();
 
+const enricheProspects ={};
 
 var expressApp = express();
 var port = 5000;
-
 expressApp.set('port', port);
 expressApp.use(morgan('dev'));
 expressApp.use(bodyParser.json());
 expressApp.use(bodyParser.urlencoded({ extended: false }));
+
+
 expressApp.use(errorHandler());
 
-
-expressApp.use('/', function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  next();
-});
 
 expressApp.get('/plugin-manifest.json', function (req, res) {
   res.sendfile('plugin-manifest.json');
@@ -36,11 +35,11 @@ expressApp.get('/plugin-manifest.json', function (req, res) {
 
 expressApp.use('/app', express.static('app'));
 expressApp.use('/app', serveIndex('app'));
-
-
-expressApp.get('/', function (req, res) {
-  res.redirect('/app');
+expressApp.use(express.static(path.join(__dirname, 'public')))
+expressApp.get('/',function(req,res,next){
+next();
 });
+
 
 var options = {
   key: fs.readFileSync('./key.pem'),
@@ -55,3 +54,47 @@ https.createServer(options, expressApp).listen(port, function () {
     console.log(chalk.bold.red(port + " port is already in use"));
   }
 });
+
+async function getEnrichedData() {
+
+  const data = {
+      api_key: "CimAYp3p4OegDg3MRj-MRA",
+      first_name: "Tim",
+      last_name: "Zheng",
+      organization_name: "Apollo",
+      email: "name@domain.io",
+      domain: "apollo.io"
+  };
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", api_url, true);
+  xhttp.setRequestHeader("Content-Type", "application/json");
+  xhttp.setRequestHeader("Cache-Control", "no-cache");
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      
+      const rawApolloData = JSON.parse(xhttp.responseText);
+      
+      rawApolloData.person.forEach(element => {
+        enrichedProspects.push({"id": element.id,"name": element.name});
+        console.log(element.id);
+      });
+      /*
+      var final = JSON.stringify(enrichedProspects);
+     
+      fs.writeFile('./app/person.json', final, err => {
+        if (err) {
+          console.error(err);
+        }
+      });
+           */
+      console.log(rawApolloData);
+    }
+  }
+  
+  xhttp.send(JSON.stringify(data));
+  
+
+};
+getEnrichedData();
