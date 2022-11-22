@@ -10,9 +10,9 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
 
     var func_name = "getApolloData";
     var req_data ={
-      "arguments": JSON.stringify({
+
         "id" : recordId
-      })
+
     };
     ZOHO.CRM.FUNCTIONS.execute(func_name, req_data)
     .then(function(data){
