@@ -1,6 +1,12 @@
+const e = require("express");
+
 ZOHO.embeddedApp.on("PageLoad", function(data) {
     //documenation code might be slightly off so double check their code
-    
+
+    //setup variables for data manipulation
+    var apolloArray = new Array();
+    var zohoArray = new Array();
+
     ZOHO.CRM.UI.Resize({height:"1200",width:"1200"}).then(function(data){
     //console.log(data), just logs true because the window resizes.
     });
@@ -20,13 +26,28 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
         "id" : recordId
     };
 
+    // the function call that return apollo data from the match service
     ZOHO.CRM.FUNCTIONS.execute(func_name, req_data)
     .then(function(data){
-        console.log(data);
+        apolloArray.push(data);
     //does return 
+    //"{"apolloContactId":" ","apolloOrgId":"55693c317369642145391800","First_Name":"Patrick","Last_Name":"Toepel","Email":"ptoepel@outsource-consultants.com","Company":"OUTSOURCE CONSULTANTS, LLC"}"
     });
-    
-
+    console.log(apolloArray);
+   
+    //the API call that returns prospect record data.
+    ZOHO.CRM.API.getRecord({moduleName,recordId})
+    .then(function (recordData) {
+        zohoArray.push(recordData);
+    // This is the information about the current record, if applicable.
+    });
+    console.log(zohoArray);
+    /*
+    ZOHO.CRM.UI.Record.edit({Entity:"Leads",RecordID:"1000000036062"})
+    then(function(data){
+    console.log(data)
+    })
+    */
 
 
 
