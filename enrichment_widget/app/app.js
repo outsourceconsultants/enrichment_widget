@@ -1,5 +1,3 @@
-const e = require("express");
-
 ZOHO.embeddedApp.on("PageLoad", function(data) {
     //documenation code might be slightly off so double check their code
 
