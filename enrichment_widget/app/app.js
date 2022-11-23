@@ -13,8 +13,8 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
     //it is passing values on page load to this code. It is allowing you access to specific data on load of the widget, these are for the module and record ID of the context of the button clicked prospect 
     var recordId = data.EntityId[0];
   
-    var moduleName = data.Entity[0];
-
+    var moduleName = data.Entity;
+    console.log(moduleName);
     //gotcha: We tried invoking and making straight JS calls but ran into CORS
     //workaround: send the request to a function in ZOHO (via the js sdk execute)that way the request works
     //the function in ZOHO is getapollo data, you do need to pass the record ID
@@ -27,15 +27,19 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
     // the function call that return apollo data from the match service
     ZOHO.CRM.FUNCTIONS.execute(func_name, req_data)
     .then(function(data){
-        apolloArray.push(data);
+        data[0].details.array.forEach(element => {
+            apolloArray.push(element);
+        });
+       
     //does return 
     //"{"apolloContactId":" ","apolloOrgId":"55693c317369642145391800","First_Name":"Patrick","Last_Name":"Toepel","Email":"ptoepel@outsource-consultants.com","Company":"OUTSOURCE CONSULTANTS, LLC"}"
     });
     console.log(apolloArray);
-   
+    console.log(moduleName);
     //the API call that returns prospect record data.
-    ZOHO.CRM.API.getRecord({moduleName,recordId})
+    ZOHO.CRM.API.getRecord({ moduleName, recordId})
     .then(function (recordData) {
+        console.log(recordData);
         zohoArray.push(recordData);
     // This is the information about the current record, if applicable.
     });
