@@ -27,12 +27,19 @@
         <div class="container">
             <form>
             <label>First Name</label>
-            <input type="radio" name="first_name" id="first_name" value="zoho" onClick="enableElement(this.form.work_permit);"><label for='work_abroad_y'>Yes</label>
-            <input type="radio" name="first_name" id="first_name" value="apollo" onClick="disableElement(this.form.work_permit);"><label for='work_abroad_n'>No</label>
-            </form>
+            <input type="checkbox" name="first_name" id="first_name" value="Y" checked><label for='first_name'>First Name</label>
+            <label>Last Name</label>
+            <input type="checkbox" name="last_name" id="last_name" value="Y"><label for='last_name'>Last Name</label>
+            <label>Company</label>
+            <input type="checkbox" name="company" id="company" value="Y"><label for='company'>Company</label>
+            <label>Organization</label>
+            <input type="checkbox" name="organization" id="organization" value="Y"><label for='organization'>Organization</label>
+            <label>Email</label>
+            <input type="checkbox" name="email" id="email" value="Y"><label for='email'>Email</label>
+        
+            <button onClik="updateButton()">Send</button>
+        </form>
           </div>
-
-
     </main>
     
     <footer>

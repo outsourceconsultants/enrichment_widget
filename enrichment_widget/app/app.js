@@ -338,30 +338,41 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
 
 ZOHO.embeddedApp.init();
 
-
-function getRadioCheckedValue(radio_name)
+function checkBox(oCheckbox)
 {
-   var oRadio = document.forms[0].elements[radio_name];
-
-   for(var i = 0; i < oRadio.length; i++)
-   {
-      if(oRadio[i].checked)
-      {
-         return oRadio[i].value;
-      }
-   }
-
-   return '';
-}
-
-function updateButton() {
-var prospectId = document.getElementById("propsectId").value;
-console.log(prospectId);
-
-var config = {
-    Entity:"Leads",
-    APIData:{
-        "id" : recordId
+    var checkbox_val = oCheckbox.value;
+    if (oCheckbox.checked == true)
+    {
+        alert("Checkbox with name = " + oCheckbox.name + " and value =" +
+                checkbox_val + " is checked");
+    }
+    else
+    {
+        alert("Checkbox with name = " + oCheckbox.name + " and value =" +
+              checkbox_val + " is not checked");
     }
 }
+
+
+
+
+
+function updateButton() {
+
+
+    var btnSubscribe = document.getElementById("btnSubmitSubscribe");
+
+    btnSubscribe.addEventListener("click", function (evt) { evt.preventDefault(); var subscribe = document.querySelector("[name=subscribe]"); console.log(subscribe.value); //writes 'newsletter' return false; });
+
+
+
+    });
+
+
+    var config = {
+        Entity:"Leads",
+        APIData:{
+            "id" : recordId
+        }
+    }
 }
