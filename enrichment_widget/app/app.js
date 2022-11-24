@@ -45,9 +45,9 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
     ZOHO.CRM.API.getRecord({ Entity:moduleName, RecordID:recordId})
     .then(function (recordData) {
         console.log(recordData);
-        recordData.data[0].array.forEach(element => {
+        recordData.data[0].forEach(element => {
             console.log(element);
-        });;
+        });
         /*
         "data":Array("1)
         0":"$approval":{
@@ -331,6 +331,13 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
 
 
 */
+var config = {
+    Entity:"Leads",
+    APIData:{
+        "id" : recordId
+    }
+}
+
 });
 
 
@@ -343,7 +350,7 @@ ZOHO.embeddedApp.init();
 
 
 
-
+function btnUpdate() {
 
 
 
@@ -365,17 +372,4 @@ ZOHO.embeddedApp.init();
 
     });
 
-    var config = {
-        Entity:"Leads",
-        APIData:{
-            "id" : recordId
-        }
-
-
-
-
-
-
-
-
-    }
+}
