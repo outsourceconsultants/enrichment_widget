@@ -357,16 +357,25 @@ function checkBox(oCheckbox)
 
 
 
-function updateButton() {
-
-
-    var btnSubscribe = document.getElementById("btnSubmitSubscribe");
-
-    btnSubscribe.addEventListener("click", function (evt) { evt.preventDefault(); var subscribe = document.querySelector("[name=subscribe]"); console.log(subscribe.value); //writes 'newsletter' return false; });
 
 
 
-    });
+    var btnUpdate= document.getElementById("btnUpdate");
+
+    btnUpdate.addEventListener("click", function (evt) {
+         evt.preventDefault(); 
+         var first_name = document.querySelector("[name=first_name]");
+          console.log(first_name.value); 
+          var last_name = document.querySelector("[name=last_name]");
+          console.log(last_name.value); 
+          var company = document.querySelector("[name=company]");
+          console.log(company.value); 
+          var organization = document.querySelector("[name=organization]");
+          console.log(organization.value); 
+          var email = document.querySelector("[name=email]");
+          console.log(email.value); 
+        
+
 
 
     var config = {

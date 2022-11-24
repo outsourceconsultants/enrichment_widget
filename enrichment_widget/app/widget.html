@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/index.css"/>
     <script src="https://live.zwidgets.com/js-sdk/1.1/ZohoEmbededAppSDK.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/app.css">
-    <script src="https://live.zwidgets.com/js-sdk/1.0.5/ZohoEmbededAppSDK.min.js"></script>
-
   </head>
   <body>
     <header>
@@ -25,36 +21,39 @@
     </section>
     <main class="site-main">
         <div class="container">
+            <div class="table-wrapper">
             <form>
-            <div class="form-section">
-            <label>First Name</label><p>Daniel</p>
-            <input type="checkbox" name="first_name" id="first_name" value="Y" checked><label for='first_name'>First Name</label>
+            <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>Field Name</th><th>Zoho Value</th><th>Enriched Value</th><th>Select</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>First Name</td><td>Zoho Data</td><td>Enriched Data</td><td> <input type="checkbox" name="first_name" id="first_name" value="Y"></td>
+            </tr>
+            <tr>
+                <td>Last Name</td><td>Zoho Data</td><td>Enriched Data</td><td> <input type="checkbox" name="last_name" id="last_name" value="Y"></td>
+            </tr>
+            <tr>
+                <td>Company</td><td>Zoho Data</td><td>Enriched Data</td><td> <input type="checkbox" name="company" id="company" value="Y"></td>
+            </tr>
+            <tr>
+                <td>Organization</td><td>Zoho Data</td><td>Enriched Data</td><td> <input type="checkbox" name="organization" id="organization" value="Y"></td>
+            </tr>
+            <tr>
+                <td>Email</td><td>Zoho Data</td><td>Enriched Data</td><td> <input type="checkbox" name="email" id="email" value="Y"></td>
+            </tr>
+            </tbody>
+            </table>
+            <button id="btnUpdate" onClick="updateButton()">Update</button>
+            </form>
             </div>
-            <div class="form-section">
-            <label>Last Name</label>
-            <input type="checkbox" name="last_name" id="last_name" value="Y"><label for='last_name'>Last Name</label>
-            </div>
-            <div class="form-section">
-            <label>Company</label>
-            <input type="checkbox" name="company" id="company" value="Y"><label for='company'>Company</label>
-            </div>
-            <div class="form-section">
-            <label>Organization</label>
-            <input type="checkbox" name="organization" id="organization" value="Y"><label for='organization'>Organization</label>
-            </div>
-            <div class="form-section">
-            <label>Email</label>
-            <input type="checkbox" name="email" id="email" value="Y"><label for='email'>Email</label>
-            </div>
-            <button onClik="updateButton()">Send</button>
-        </form>
           </div>
     </main>
     
     <footer>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="./app.js"></script>
     </footer>
   </body>
