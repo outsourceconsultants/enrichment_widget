@@ -338,20 +338,7 @@ ZOHO.embeddedApp.on("PageLoad", function(data) {
 
 ZOHO.embeddedApp.init();
 
-function checkBox(oCheckbox)
-{
-    var checkbox_val = oCheckbox.value;
-    if (oCheckbox.checked == true)
-    {
-        alert("Checkbox with name = " + oCheckbox.name + " and value =" +
-                checkbox_val + " is checked");
-    }
-    else
-    {
-        alert("Checkbox with name = " + oCheckbox.name + " and value =" +
-              checkbox_val + " is not checked");
-    }
-}
+
 
 
 
@@ -362,7 +349,7 @@ function checkBox(oCheckbox)
 
     var btnUpdate= document.getElementById("btnUpdate");
 
-    btnUpdate.addEventListener("click", function (evt) {
+    btnUpdate.addEventListener("ontoggle", function (evt) {
          evt.preventDefault(); 
          var first_name = document.querySelector("[name=first_name]");
           console.log(first_name.value); 
@@ -390,5 +377,5 @@ function checkBox(oCheckbox)
 
 
 
-        
+
     }
