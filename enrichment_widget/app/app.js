@@ -376,11 +376,19 @@ function checkBox(oCheckbox)
           console.log(email.value); 
         
 
-
+    });
 
     var config = {
         Entity:"Leads",
         APIData:{
             "id" : recordId
         }
-    
+
+
+
+
+
+
+
+        
+    }
