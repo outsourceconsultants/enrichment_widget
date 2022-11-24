@@ -383,5 +383,4 @@ function checkBox(oCheckbox)
         APIData:{
             "id" : recordId
         }
-    }
-}
+    
