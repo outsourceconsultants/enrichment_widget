@@ -23,7 +23,7 @@
         <div class="container">
             <div class="table-wrapper">
             <form>
-            <table class="fl-table">
+            <table id="fl-table" class="fl-table">
             <thead>
                 <tr>
                     <th>Field Name</th><th>Zoho Value</th><th>Enriched Value</th><th>Select</th>
@@ -36,18 +36,10 @@
             <tr>
                 <td>Last Name</td><td>Zoho Data</td><td>Enriched Data</td><td> <input type="checkbox" name="last_name" id="last_name" value="Y"></td>
             </tr>
-            <tr>
-                <td>Company</td><td>Zoho Data</td><td>Enriched Data</td><td> <input type="checkbox" name="company" id="company" value="Y"></td>
-            </tr>
-            <tr>
-                <td>Organization</td><td>Zoho Data</td><td>Enriched Data</td><td> <input type="checkbox" name="organization" id="organization" value="Y"></td>
-            </tr>
-            <tr>
-                <td>Email</td><td>Zoho Data</td><td>Enriched Data</td><td> <input type="checkbox" name="email" id="email" value="Y"></td>
-            </tr>
+
             </tbody>
             </table>
-            <button id="btnUpdate" onClick="btnUpdate()">Update</button>
+            <button id="btnUpdate" onClick="updateRecord();">Update</button>
             </form>
             </div>
           </div>
